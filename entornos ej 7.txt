@@ -1,0 +1,130 @@
+// 1.1 al 10
+public class BasicPrograms {
+    public static void main(String[] args) {
+        // 1. Números del 1 al 10
+        System.out.println("Números del 1 al 10:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+
+        // 2. Números pares del 1 al 20
+        System.out.println("\nNúmeros pares del 1 al 20:");
+        int num = 1;
+        while (num <= 20) {
+            if (num % 2 == 0) {
+                System.out.println(num);
+            }
+            num++;
+        }
+
+        // 3. Suma de números del 1 al 100
+        System.out.println("\nSuma de los números del 1 al 100:");
+        int suma = 0;
+        for (int i = 1; i <= 100; i++) {
+            suma += i;
+        }
+        System.out.println("La suma es: " + suma);
+
+        // 4. Factorial de un número
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        System.out.print("\nIntroduce un número para calcular su factorial: ");
+        int n = scanner.nextInt();
+        long factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        System.out.println("El factorial de " + n + " es: " + factorial);
+
+        // 5. Tabla de multiplicar
+        System.out.print("\nIntroduce un número para su tabla de multiplicar: ");
+        int tabla = scanner.nextInt();
+        System.out.println("Tabla de multiplicar del " + tabla + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(tabla + " x " + i + " = " + (tabla * i));
+        }
+
+        // 6. Sumar dígitos de un número
+        System.out.print("\nIntroduce un número para sumar sus dígitos: ");
+        int numero = scanner.nextInt();
+        int sumaDigitos = 0;
+        while (numero != 0) {
+            sumaDigitos += numero % 10;
+            numero /= 10;
+        }
+        System.out.println("La suma de los dígitos es: " + sumaDigitos);
+
+        // 7. Invertir un número
+        System.out.print("\nIntroduce un número para invertir: ");
+        int numeroInvertir = scanner.nextInt();
+        int invertido = 0;
+        while (numeroInvertir != 0) {
+            invertido = invertido * 10 + numeroInvertir % 10;
+            numeroInvertir /= 10;
+        }
+        System.out.println("El número invertido es: " + invertido);
+
+        // 8. Número primo
+        System.out.print("\nIntroduce un número para verificar si es primo: ");
+        int primo = scanner.nextInt();
+        boolean esPrimo = true;
+        if (primo <= 1) {
+            esPrimo = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(primo); i++) {
+                if (primo % i == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
+        }
+        if (esPrimo) {
+            System.out.println(primo + " es un número primo.");
+        } else {
+            System.out.println(primo + " no es un número primo.");
+        }
+
+        // Ejercicio 1: Crear un Array de Números Pares
+        System.out.println("\nArray de los primeros 10 números pares:");
+        int[] pares = new int[10];
+        for (int i = 0; i < 10; i++) {
+            pares[i] = (i + 1) * 2;
+            System.out.println(pares[i]);
+        }
+
+        // Ejercicio 2: Suma de Elementos de un Array
+        System.out.println("\nSuma de elementos de un array:");
+        int[] numeros = new int[5];
+        int sumaArray = 0;
+        System.out.println("Introduce 5 números enteros:");
+        for (int i = 0; i < 5; i++) {
+            numeros[i] = scanner.nextInt();
+            sumaArray += numeros[i];
+        }
+        System.out.println("La suma de los elementos es: " + sumaArray);
+
+        // Ejercicio 3: Ordenar un Array
+        System.out.println("\nArray antes y después de ordenar:");
+        int[] aleatorios = new int[7];
+        System.out.println("Array original:");
+        for (int i = 0; i < 7; i++) {
+            aleatorios[i] = (int) (Math.random() * 100 + 1);
+            System.out.print(aleatorios[i] + " ");
+        }
+        java.util.Arrays.sort(aleatorios);
+        System.out.println("\nArray ordenado:");
+        for (int numOrdenado : aleatorios) {
+            System.out.print(numOrdenado + " ");
+        }
+        System.out.println();
+
+        // ejercicio4: Números Impares
+        System.out.println("\nNúmeros impares del 1 al 20:");
+        int[] impares = new int[20];
+        for (int i = 0; i < 20; i++) {
+            impares[i] = i + 1;
+            if (impares[i] % 2 != 0) {
+                System.out.println(impares[i]);
+            }
+        }
+    }
+}
